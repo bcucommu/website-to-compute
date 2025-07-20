@@ -1,16 +1,9 @@
-import { defineConfig } from "vite";
+const box = document.getElementById("box");
 
-// https://vitejs.dev/config/
-export default defineConfig(async ({ command, mode }) => {
-  return {
-    build: {
-      outDir: "deploy/_site",
-      rollupOptions: {
-        input: {
-          main: 'index.html',
-          404: '404.html',
-        },
-      }
-    }
-  }
+box.addEventListener("click", () => {
+  const x = Math.random() * (window.innerWidth - 50);
+  const y = Math.random() * (window.innerHeight - 50);
+  box.style.left = x + "px";
+  box.style.top = y + "px";
 });
+
